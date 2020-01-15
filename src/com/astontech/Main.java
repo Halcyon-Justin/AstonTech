@@ -1,5 +1,6 @@
 package com.astontech;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,9 +11,224 @@ public class Main {
     public static void main(String[] args) {
 
         //notes:    Private Static Method for the lesson
-	    LessonFundamentalsLAB();
+	    LessonExceptions();
 
     }
+
+    private static void LessonExceptions() {
+        //todo: simple unhandled exception
+//        String firstName = "Justin";
+//        int x = Integer.parseInt(firstName);
+//
+//        System.out.print("Interger value: ");
+//        System.out.println(x);
+
+        //todo: try - catch block
+//        String firstName = "Justin";
+//        try {
+//            int x = Integer.parseInt(firstName);
+//
+//            System.out.print("Integer value: ");
+//            System.out.println(x);
+//        } catch(NumberFormatException ex) {
+//            System.out.println("Exception: Invalid Number");
+//        }
+
+        //todo: try - catch with multiple catch blocks
+//        String firstName = null;
+//        try {
+//            int x = Integer.parseInt(firstName);
+//
+//            System.out.print("Integer Value: ");
+//            System.out.println(x);
+//        }
+//        catch (NumberFormatException ex)
+//        {
+//            System.out.println("Exception: Number Format Error");
+//        }
+//        catch (IllegalArgumentException ex)
+//        {
+//            System.out.println("Exception: String was null or empty");
+//        }
+//        catch (Exception ex)
+//        {
+//            System.out.println("Exception: Generic Exception");
+//        }
+
+
+        //todo: try - catch with multiple catch and finally block
+//        String firstName = null;
+//        try {
+//            int x = Integer.parseInt(firstName);
+//
+//            System.out.print("Integer Value: ");
+//            System.out.println(x);
+//        }
+//        catch (IllegalArgumentException ex)
+//        {
+//            System.out.println("Exception: String was null or empty");
+//        }
+//        catch (NullPointerException ex)
+//        {
+//            System.out.println("Exception: Null Pointer");
+//        }
+//        catch (Exception ex)
+//        {
+//            System.out.println("Exception: Generic Exception");
+//        }
+//        finally
+//        {
+//            System.out.println("Program has been completed regardless of exceptions");
+//        }
+
+        //todo: exception object
+//        String firstName = null;
+//        try {
+//            int x = Integer.parseInt(firstName);
+//
+//            System.out.print("Integer Value: ");
+//            System.out.println(x);
+//        }
+//        catch (IllegalArgumentException ex)
+//        {
+//            System.out.println("Exception: " + ex.toString());
+//        }
+//        catch (NullPointerException ex)
+//        {
+//            System.out.println("Exception: " + ex.toString());
+//        }
+//        catch (Exception ex)
+//        {
+//            System.out.println("Exception: " + ex.toString());
+//        }
+//        finally
+//        {
+//            System.out.println("Program has been completed regardless of exceptions");
+//        }
+
+        //todo: Throwing an Exception
+//        String firstName = null;
+//        try {
+//            int x = Integer.parseInt(firstName);
+//
+//            System.out.print("Integer value: ");
+//            System.out.println(x);
+//        }
+//        catch (Exception ex)
+//        {
+//            throw new Exception("A custom exception from LessonExceptions method.", ex);
+//        }
+
+
+    }
+
+    private static void LessonFlowControl(){
+        //notes:    if/else
+        String name = "justin";
+        //if(name == "justin")
+        //OR if working with strings
+        if(name.equals("dan")) {
+            System.out.println("Correct First Name");
+            System.out.println("Correct First Name");
+        }
+        else {
+            System.out.println("Incorrect First Name");
+            if(name.length() > 10) {
+                System.out.println("Very long first name");
+            }
+            else if(name.length() > 5) {
+                System.out.println("long first name");
+            } else {
+                System.out.println("Short first name");
+            }
+        }
+
+        //notes:    CASE-SWITCH
+        switch(name)
+        {
+            case "justin":
+                System.out.println("cool first name");
+                break;
+            case "dan":
+            case "danny":
+            case "daniel":
+                System.out.println("first name is dan, danny, or daniel");
+                break;
+
+            default:
+                System.out.println("some other first name");
+                break;
+        }
+
+
+    }
+
+    private static void LessonOperators(){
+        //notes:    plus/minus
+        int val = 10;
+        System.out.println(val + 10);
+        System.out.println(val - 10);
+
+        //notes:    modulus (%) - the remainder
+        int modVal = 10 % 3; //the remainder of 10/3 which is 1
+        System.out.println(modVal);
+
+        //notes:    increment (++) / decrement (--)
+        System.out.println("increment after: ");
+        System.out.println(val++);  //10
+        System.out.println(val++);  //11
+        System.out.println(val++);  //12
+        System.out.println(val);    //val=13;
+
+        val = 10;
+        System.out.println("increment before: ");
+        System.out.println(++val);  //11
+        System.out.println(++val);  //12
+        System.out.println(++val);  //13
+        System.out.println(val);    //val=13;
+
+        val = 10;
+        System.out.println("decrement after: ");
+        System.out.println(val--);  //10
+        System.out.println(val--);  //9
+        System.out.println(val--);  //8
+        System.out.println(val);    //7;
+
+        val = 10;
+        System.out.println("increment before: ");
+        System.out.println(--val);  //9
+        System.out.println(--val);  //8
+        System.out.println(--val);  //7
+        System.out.println(val);    //7
+
+        //notes:    conditional (==) / logical not equal (!=)
+        val = 10;
+        int anotherVal = 20;
+
+        if(val != anotherVal)
+            System.out.println("Not Equals");
+        else
+            System.out.println("Equals");
+
+        //notes:    logical AND (&&) / logical OR (||)
+        //Using one & causes both parameters to be checked.
+        if(val == 10 && anotherVal == 10)
+            System.out.println("Is True");
+        else
+            System.out.println("Not true");
+
+        //notes:    negation (!)
+        boolean boolVar = true;
+        if(!boolVar)
+            System.out.println("Is True");
+        else
+            System.out.println("Not true");
+
+
+
+
+    }
+
     private static void LessonFundamentalsLAB(){
         //   What is a variable?
         //   Variable is an item that has a value that can be changed depending on how its used.
