@@ -1,6 +1,5 @@
 package com.astontech;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +11,6 @@ public class Main {
 
         //notes:    Private Static Method for the lesson
 	    LessonExceptions();
-        // test
     }
 
     private static void LessonExceptions() {
