@@ -10,7 +10,90 @@ public class Main {
     public static void main(String[] args) {
 
         //notes:    Private Static Method for the lesson
-	    LessonExceptions();
+	    LessonCalculatorLAB();
+    }
+
+
+    private static void LessonCalculatorLAB(){
+        Scanner reader = new Scanner(System.in);
+        int firstNumber = 0;
+        int secondNumber = 0;
+        try {
+            int total = secondNumber/firstNumber;
+            System.out.println("Result: " + total);
+        }
+        catch(ArithmeticException ex){
+            System.out.println("Exception: Cannot divide by 0");
+        }
+        finally
+        {
+            System.out.println("Program has been completed regardless of exceptions");
+        }
+        String operatorInput = null;
+        while(true){
+            System.out.print("Enter a value between 0 and 9: ");
+            String firstInput = reader.nextLine();
+            firstNumber = Integer.parseInt(firstInput);
+            if(firstNumber > 9 || firstNumber < 0) {
+                System.out.println("INVALID");
+            } else {
+                break;
+            }
+        }
+        while(true){
+            System.out.print("Enter another value between 0 and 9: ");
+            String secondInput = reader.nextLine();
+            secondNumber = Integer.parseInt(secondInput);
+            if(secondNumber > 9 || secondNumber < 0) {
+                System.out.println("INVALID");
+            } else {
+                break;
+            }
+        }
+        while(true){
+            System.out.print("Enter an operator (+,-,/,*: ");
+            operatorInput = reader.nextLine();
+            if(!"+".equals(operatorInput) & !"-".equals(operatorInput) & !"/".equals(operatorInput) & !"*".equals(operatorInput)) {
+                System.out.println("INVALID");
+            } else {
+                break;
+            }
+        }
+         switch(operatorInput){
+             case "+":
+                 int calculationAdd = firstNumber + secondNumber;
+                 System.out.println(firstNumber + " + " + secondNumber + " = " + calculationAdd);
+                 break;
+             case "-":
+                 int calculationSub = firstNumber - secondNumber;
+                 System.out.println(firstNumber + " - " + secondNumber + " = " + calculationSub);
+                 break;
+             case "/":
+                 int calculationDiv = firstNumber / secondNumber;
+                 System.out.println(firstNumber + " / " + secondNumber + " = " + calculationDiv);
+                 break;
+             case "*":
+                 int calculationMul = firstNumber * secondNumber;
+                 System.out.println(firstNumber + " * " + secondNumber + " = " + calculationMul);
+                 break;
+             default:
+                 System.out.println("Thanks for playing!");
+                 break;
+         }
+    }
+
+    private static void LessonFizzBuzzLAB(){
+        int i;
+        for(i=1; i <= 100; i++) {
+            if ((i%3) == 0 && (i%5) == 0) {
+                System.out.println("FizzBuzz");
+            } else if ((i%5) == 0) {
+                System.out.println("Buzz");
+            } else if ((i%3)==0) {
+                System.out.println("Fizz");
+            } else
+                System.out.println(i);
+        }
     }
 
     private static void LessonExceptions() {
